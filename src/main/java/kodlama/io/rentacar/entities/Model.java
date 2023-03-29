@@ -8,17 +8,18 @@ import lombok.Setter;
 
 import java.util.List;
 
-@AllArgsConstructor
-@NoArgsConstructor
+@Entity
 @Getter
 @Setter
-@Entity
-@Table(name="brands")
-public class Brand {
+@NoArgsConstructor
+@AllArgsConstructor
+public class Model {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  int id;
-    private String name;
-    @OneToMany(mappedBy = "brand")
-    private List<Model> models;
+    private int id;
+    private String Name;
+    @ManyToOne
+    private Brand brand;
+    @OneToMany(mappedBy = "model")
+    private List<Car> cars;
 }

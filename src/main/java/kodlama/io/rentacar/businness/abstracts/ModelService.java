@@ -1,0 +1,18 @@
+package kodlama.io.rentacar.businness.abstracts;
+
+import kodlama.io.rentacar.businness.dto.requests.create.CreateModelRequest;
+import kodlama.io.rentacar.businness.dto.requests.update.UpdateModelRequest;
+import kodlama.io.rentacar.businness.dto.responses.create.CreateModelResponse;
+import kodlama.io.rentacar.businness.dto.responses.get.GetAllModelResponse;
+import kodlama.io.rentacar.businness.dto.responses.get.GetModelResponse;
+import kodlama.io.rentacar.businness.dto.responses.update.UpdateModelResponse;
+
+import java.util.List;
+
+public interface ModelService  {
+    List<GetAllModelResponse> getAll();
+    GetModelResponse getById(int id);
+    CreateModelResponse add(CreateModelRequest request);
+    UpdateModelResponse update(int id, UpdateModelRequest request);
+    void delete(int id);
+}
