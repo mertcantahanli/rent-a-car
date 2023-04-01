@@ -4,7 +4,7 @@ import kodlama.io.rentacar.businness.abstracts.ModelService;
 import kodlama.io.rentacar.businness.dto.requests.create.CreateModelRequest;
 import kodlama.io.rentacar.businness.dto.requests.update.UpdateModelRequest;
 import kodlama.io.rentacar.businness.dto.responses.create.CreateModelResponse;
-import kodlama.io.rentacar.businness.dto.responses.get.GetAllModelResponse;
+import kodlama.io.rentacar.businness.dto.responses.get.GetAllModelsResponse;
 import kodlama.io.rentacar.businness.dto.responses.get.GetModelResponse;
 import kodlama.io.rentacar.businness.dto.responses.update.UpdateModelResponse;
 import kodlama.io.rentacar.entities.Model;
@@ -20,17 +20,20 @@ public class ModelManager implements ModelService {
     private final ModelRepository repository;
     private  final ModelMapper mapper;
     @Override
-    public List<GetAllModelResponse> getAll() {
+    public List<GetAllModelsResponse> getAll() {
         List<Model> models = repository.findAll();
-        List<GetAllModelResponse> response = models
-                .stream().map(model -> mapper.map(model,GetAllModelResponse.class))
+        List<GetAllModelsResponse> response = models
+                .stream().map(model -> mapper.map(model, GetAllModelsResponse.class))
                 .toList();
         return response;
     }
 
     @Override
     public GetModelResponse getById(int id) {
-        return null;
+        checkIfModelExists(id);
+        Model model=repository.findById(id).orElseThrow();
+        GetModelResponse response =mapper.map(model, GetModelResponse.class);
+        return response;
     }
 
 
@@ -48,13 +51,21 @@ public class ModelManager implements ModelService {
 
     @Override
     public UpdateModelResponse update(int id, UpdateModelRequest request) {
-        return null;
+        Model model = mapper.map(request, Model.class);
+        model.setId(id);
+        repository.save(model);
+        UpdateModelResponse response = mapper.map(model, UpdateModelResponse.class);
+        return response;
     }
 
 
 
     @Override
     public void delete(int id) {
-
+        repository.deleteById(id);
+    }
+    private void checkIfModelExists(int id){
+        // id ye ait data kontrolu yapar
+        if (!repository.existsById(id)) throw  new RuntimeException("Model bulunamadi");
     }
 }
