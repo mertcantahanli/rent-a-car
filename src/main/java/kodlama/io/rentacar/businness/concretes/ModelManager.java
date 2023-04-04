@@ -41,7 +41,7 @@ public class ModelManager implements ModelService {
     public CreateModelResponse add(CreateModelRequest request) {
         Model model = mapper.map(request, Model.class);
         model.setId(0);
-        request.getBrand_id();
+        request.getBrandId();
 
         repository.save(model);
         CreateModelResponse response = mapper.map(model, CreateModelResponse.class);

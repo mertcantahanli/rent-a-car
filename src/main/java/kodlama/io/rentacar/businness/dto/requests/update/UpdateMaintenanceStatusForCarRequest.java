@@ -5,12 +5,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Setter
-@Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UpdateModelRequest {
-    private String Name;
-
-    private String brandId;
+@Getter
+@Setter
+public class UpdateMaintenanceStatusForCarRequest {
+    private int carId;
 }

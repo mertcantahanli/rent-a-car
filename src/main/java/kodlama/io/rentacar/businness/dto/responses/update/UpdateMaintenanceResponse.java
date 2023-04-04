@@ -1,0 +1,19 @@
+package kodlama.io.rentacar.businness.dto.responses.update;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.util.Date;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+public class UpdateMaintenanceResponse {
+    private int id;
+    private int carId;
+    private Date sendDate;
+    private Date returnDate;
+}

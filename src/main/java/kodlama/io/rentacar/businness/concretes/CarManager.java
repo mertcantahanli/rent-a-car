@@ -1,6 +1,7 @@
 package kodlama.io.rentacar.businness.concretes;
 
 import kodlama.io.rentacar.businness.abstracts.CarService;
+import kodlama.io.rentacar.businness.abstracts.MaintenanceService;
 import kodlama.io.rentacar.businness.dto.requests.create.CreateCarRequest;
 import kodlama.io.rentacar.businness.dto.requests.update.UpdateCarRequest;
 import kodlama.io.rentacar.businness.dto.responses.create.CreateCarResponse;
@@ -21,7 +22,7 @@ public class CarManager implements CarService {
 
     private final CarRepository repository;
     private  final ModelMapper mapper;
-
+private final MaintenanceService maintenanceService;
 
     @Override
     public List<GetAllCarsResponse> getAll() {
@@ -29,6 +30,16 @@ public class CarManager implements CarService {
         List<GetAllCarsResponse> response = cars
                 .stream().map(car -> mapper.map(car,GetAllCarsResponse.class))
                 .toList();
+        response.get(0);
+//        response.stream().forEach(getAllCarsResponse -> {
+//            if (State.MAINTANCE.equals(getAllCarsResponse.getState())){
+//               GetAllMaintenancesResponse getMaintenancesResponse = maintenanceService.getMaintenanceByCarId(getAllCarsResponse.getId());
+//            if(!getMaintenancesResponse.isViewable()){
+//                response.remove(getAllCarsResponse)
+//            }
+//            }
+//
+//        });
         return response;
     }
 

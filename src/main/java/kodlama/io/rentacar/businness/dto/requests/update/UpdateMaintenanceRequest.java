@@ -5,12 +5,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Setter
-@Getter
+import java.util.Date;
+
 @NoArgsConstructor
 @AllArgsConstructor
-public class UpdateModelRequest {
-    private String Name;
-
-    private String brandId;
+@Getter
+@Setter
+public class UpdateMaintenanceRequest {
+    private Date sendDate;
 }

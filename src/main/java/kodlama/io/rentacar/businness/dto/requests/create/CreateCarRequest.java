@@ -1,5 +1,6 @@
 package kodlama.io.rentacar.businness.dto.requests.create;
 
+import kodlama.io.rentacar.enums.State;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,4 +14,6 @@ public class CreateCarRequest {
     private int modelYear;
     private String plate;
     private double dailyPrice;
+    private State state;
+    private int modelId;
 }

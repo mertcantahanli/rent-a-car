@@ -21,29 +21,29 @@ public class ModelsController {
 
 
     @GetMapping
-    public List<GetAllModelsResponse> findAll() {
+    public List<GetAllModelsResponse> findAll(){
         return modelService.getAll();
     }
-
     @GetMapping("/{id}")
-    public GetModelResponse getById(@PathVariable int id) {
+    public GetModelResponse getById(@PathVariable int id){
         return modelService.getById(id);
     }
 
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public CreateModelResponse add(@RequestBody CreateModelRequest request) {
+    public CreateModelResponse add(@RequestBody CreateModelRequest request ){
         return modelService.add(request);
     }
 
     @PutMapping("/{id}")
-    public UpdateModelResponse update(@PathVariable int id, @RequestBody UpdateModelRequest modelRequest) {
+    public UpdateModelResponse update(@PathVariable int id, @RequestBody UpdateModelRequest modelRequest){
         return modelService.update(id, modelRequest);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable int id) {
+    public void delete( @PathVariable int id)
+    {
         modelService.delete(id);
     }
 }
