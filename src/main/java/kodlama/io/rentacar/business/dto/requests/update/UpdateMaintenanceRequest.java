@@ -1,6 +1,5 @@
-package kodlama.io.rentacar.entities;
+package kodlama.io.rentacar.business.dto.requests.update;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,21 +7,14 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-@Entity
+@Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
-@Table(name = "maintenances")
-public class Maintenance {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+public class UpdateMaintenanceRequest {
+    private int carId;
     private String information;
     private boolean isCompleted;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
-    @ManyToOne
-    @JoinColumn(name = "car_id")
-    private Car car;
 }
