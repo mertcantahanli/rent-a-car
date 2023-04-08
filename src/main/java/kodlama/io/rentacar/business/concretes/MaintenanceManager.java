@@ -51,7 +51,7 @@ public class MaintenanceManager implements MaintenanceService {
         maintenance.setCompleted(true);
         maintenance.setEndDate(LocalDateTime.now());
         repository.save(maintenance);
-        carService.changeState(carId, State.AVALIABLE);
+        carService.changeState(carId, State.AVAILABLE);
         GetMaintenanceResponse response = mapper.map(maintenance, GetMaintenanceResponse.class);
 
         return response;
@@ -88,7 +88,7 @@ public class MaintenanceManager implements MaintenanceService {
     public void delete(int id) {
         checkIfMaintenanceExists(id);
         int carId=repository.findById(id).get().getId();
-        carService.changeState(carId, State.AVALIABLE);
+        carService.changeState(carId, State.AVAILABLE);
         repository.deleteById(id);
     }
 
@@ -98,7 +98,7 @@ public class MaintenanceManager implements MaintenanceService {
         }
     }
 
-    private void checkIfCarUnderMaintenance(int carId) {
+    public void checkIfCarUnderMaintenance(int carId) {
         if (repository.existsByCarIdAndIsCompletedFalse(carId)) {
             throw new RuntimeException("Araç şuanda bakımda!");
         }

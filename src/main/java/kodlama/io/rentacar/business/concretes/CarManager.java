@@ -48,7 +48,7 @@ public class CarManager implements CarService {
     public CreateCarResponse add(CreateCarRequest request) {
         Car car = mapper.map(request, Car.class);
         car.setId(0);
-        car.setState(State.AVALIABLE);
+        car.setState(State.AVAILABLE);
         repository.save(car);
         CreateCarResponse response = mapper.map(car, CreateCarResponse.class);
         return response;
@@ -75,7 +75,7 @@ public class CarManager implements CarService {
         repository.save(car);
     }
 
-    private void checkIfCarExists(int id){
+    public void checkIfCarExists(int id){
         // id ye ait data kontrolu yapar
         if (!repository.existsById(id)) throw  new RuntimeException("Araba bulunamadi");
     }
