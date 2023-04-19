@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreateRentalResponse {
-    private int id,carId;
+    private int id, carId;
     private double dailyPrice, totalPrice;
     private int rentedForDays;
     private LocalDateTime startDate;

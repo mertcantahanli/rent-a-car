@@ -17,44 +17,32 @@ import java.util.List;
 @AllArgsConstructor
 @RequestMapping("/api/rentals")
 public class RentalsController {
-
     private final RentalService service;
 
     @GetMapping
-    public List<GetAllRentalsResponse> getAll()
-    {
+    public List<GetAllRentalsResponse> getAll() {
         return service.getAll();
+    }
+
+    @GetMapping("/{id}")
+    public GetRentalResponse getById(@PathVariable int id) {
+        return service.getById(id);
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public CreateRentalResponse add(@RequestBody CreateRentalRequest request)
-    {
+    public CreateRentalResponse add(@RequestBody CreateRentalRequest request) {
         return service.add(request);
     }
 
     @PutMapping("/{id}")
-    public UpdateRentalResponse update(@PathVariable int id, @RequestBody UpdateRentalRequest request)
-    {
+    public UpdateRentalResponse update(@PathVariable int id, @RequestBody UpdateRentalRequest request) {
         return service.update(id, request);
-    }
-
-    @GetMapping("/{id}")
-    public GetRentalResponse getById(@PathVariable int id)
-    {
-        return service.getById(id);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable int id)
-    {
+    public void delete(@PathVariable int id) {
         service.delete(id);
-    }
-
-    @PutMapping("/return")
-    public GetRentalResponse returnCarFromRented(@RequestParam int id)
-    {
-        return service.returnCarFromRented(id);
     }
 }

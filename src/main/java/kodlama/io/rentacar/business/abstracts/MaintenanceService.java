@@ -12,10 +12,16 @@ import java.util.List;
 
 public interface MaintenanceService {
     List<GetAllMaintenancesResponse> getAll();
+
     GetMaintenanceResponse getById(int id);
+
     CreateMaintenanceResponse add(CreateMaintenanceRequest request);
+
     UpdateMaintenanceResponse update(int id, UpdateMaintenanceRequest request);
+
     GetMaintenanceResponse returnCarFromMaintenance(int carId);
+
     void delete(int id);
-    void checkIfCarUnderMaintenance(int carId);
+
+
 }

@@ -24,20 +24,22 @@ public class CarsController {
     }
 
     @GetMapping("/{id}")
-    public GetCarResponse getById(@PathVariable int id){
+    public GetCarResponse getById(@PathVariable int id) {
         return carService.getById(id);
     }
+
     @PostMapping
-    public CreateCarResponse add(@RequestBody  CreateCarRequest request){
+    public CreateCarResponse add(@RequestBody CreateCarRequest request) {
         return carService.add(request);
     }
 
     @PutMapping("/{id}")
-    public UpdateCarResponse update(@PathVariable int id, @RequestBody  UpdateCarRequest request){
-        return carService.update(id,request);
+    public UpdateCarResponse update(@PathVariable int id, @RequestBody UpdateCarRequest request) {
+        return carService.update(id, request);
     }
+
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable int id){
+    public void delete(@PathVariable int id) {
         carService.delete(id);
     }
 }

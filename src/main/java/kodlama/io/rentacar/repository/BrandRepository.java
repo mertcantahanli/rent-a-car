@@ -4,9 +4,8 @@ import kodlama.io.rentacar.entities.Brand;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 //CRUD operations
-public interface BrandRepository extends JpaRepository<Brand,Integer> {
-    //custom queries
+public interface BrandRepository extends JpaRepository<Brand, Integer> {
 
-
+    boolean existsByNameIgnoreCase(String name);
 
 }
