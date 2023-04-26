@@ -128,4 +128,6 @@ public class RentalManager implements RentalService {
 //        invoiceRequest.setPlate(car.getPlate());
 //        invoiceRequest.setModelYear(car.getModelYear());
 //    }
+
+  
 }
