@@ -8,7 +8,7 @@ import kodlama.io.rentacar.business.dto.responses.get.GetAllModelsResponse;
 import kodlama.io.rentacar.business.dto.responses.get.GetModelResponse;
 import kodlama.io.rentacar.business.dto.responses.update.UpdateModelResponse;
 import kodlama.io.rentacar.business.rules.ModelBusinessRules;
-import kodlama.io.rentacar.entities.Model;
+import kodlama.io.rentacar.model.Model;
 import kodlama.io.rentacar.repository.ModelRepository;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;

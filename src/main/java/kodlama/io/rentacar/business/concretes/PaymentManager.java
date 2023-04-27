@@ -10,7 +10,7 @@ import kodlama.io.rentacar.business.dto.responses.get.GetPaymentResponse;
 import kodlama.io.rentacar.business.dto.responses.update.UpdatePaymentResponse;
 import kodlama.io.rentacar.business.rules.PaymentBusinessRules;
 import kodlama.io.rentacar.common.dto.CreateRentalPaymentRequest;
-import kodlama.io.rentacar.entities.Payment;
+import kodlama.io.rentacar.model.Payment;
 import kodlama.io.rentacar.repository.PaymentRepository;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;

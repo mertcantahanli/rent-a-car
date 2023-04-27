@@ -1,7 +1,7 @@
-package kodlama.io.rentacar.entities;
+package kodlama.io.rentacar.model;
 
 import jakarta.persistence.*;
-import kodlama.io.rentacar.entities.enums.State;
+import kodlama.io.rentacar.model.enums.State;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

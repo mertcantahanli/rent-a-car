@@ -9,8 +9,8 @@ import kodlama.io.rentacar.business.dto.responses.get.GetAllMaintenancesResponse
 import kodlama.io.rentacar.business.dto.responses.get.GetMaintenanceResponse;
 import kodlama.io.rentacar.business.dto.responses.update.UpdateMaintenanceResponse;
 import kodlama.io.rentacar.business.rules.MaintenanceBusinessRules;
-import kodlama.io.rentacar.entities.Maintenance;
-import kodlama.io.rentacar.entities.enums.State;
+import kodlama.io.rentacar.model.Maintenance;
+import kodlama.io.rentacar.model.enums.State;
 import kodlama.io.rentacar.repository.MaintenanceRepository;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;

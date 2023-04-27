@@ -1,6 +1,6 @@
 package kodlama.io.rentacar.repository;
 
-import kodlama.io.rentacar.entities.Maintenance;
+import kodlama.io.rentacar.model.Maintenance;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

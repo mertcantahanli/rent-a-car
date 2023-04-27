@@ -1,4 +1,4 @@
-package kodlama.io.rentacar.entities;
+package kodlama.io.rentacar.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

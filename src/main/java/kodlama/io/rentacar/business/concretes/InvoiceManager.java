@@ -8,7 +8,7 @@ import kodlama.io.rentacar.business.dto.responses.get.GetAllInvoicesResponse;
 import kodlama.io.rentacar.business.dto.responses.get.GetInvoiceResponse;
 import kodlama.io.rentacar.business.dto.responses.update.UpdateInvoiceResponse;
 import kodlama.io.rentacar.business.rules.InvoiceBusinessRules;
-import kodlama.io.rentacar.entities.Invoice;
+import kodlama.io.rentacar.model.Invoice;
 import kodlama.io.rentacar.repository.InvoiceRepository;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;

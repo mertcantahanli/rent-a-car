@@ -14,8 +14,8 @@ import kodlama.io.rentacar.business.dto.responses.get.GetRentalResponse;
 import kodlama.io.rentacar.business.dto.responses.update.UpdateRentalResponse;
 import kodlama.io.rentacar.business.rules.RentalBusinessRules;
 import kodlama.io.rentacar.common.dto.CreateRentalPaymentRequest;
-import kodlama.io.rentacar.entities.Rental;
-import kodlama.io.rentacar.entities.enums.State;
+import kodlama.io.rentacar.model.Rental;
+import kodlama.io.rentacar.model.enums.State;
 import kodlama.io.rentacar.repository.RentalRepository;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -129,5 +129,5 @@ public class RentalManager implements RentalService {
 //        invoiceRequest.setModelYear(car.getModelYear());
 //    }
 
-  
+
 }

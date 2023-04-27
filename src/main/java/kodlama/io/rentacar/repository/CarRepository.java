@@ -1,7 +1,7 @@
 package kodlama.io.rentacar.repository;
 
-import kodlama.io.rentacar.entities.Car;
-import kodlama.io.rentacar.entities.enums.State;
+import kodlama.io.rentacar.model.Car;
+import kodlama.io.rentacar.model.enums.State;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

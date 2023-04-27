@@ -1,4 +1,4 @@
-package kodlama.io.rentacar.entities.enums;
+package kodlama.io.rentacar.model.enums;
 
 public enum State {
     AVAILABLE,
